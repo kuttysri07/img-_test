@@ -43,7 +43,7 @@ const App = () => {
             <br/>
             <div>
                 {images.map((img, index) => (
-                    <img className="uploaded-image" key={index} src={`http://localhost:8000/images/${img.image}`} alt={`Uploaded ${index}`} style={{ width: '200px', margin: '10px' }} />
+                    <img className="uploaded-image" key={index} src={`${API_BASE_URL}/images/${img.image}`} alt={`Uploaded ${index}`} style={{ width: '200px', margin: '10px' }} />
                 ))}
             </div>
         </div>
