@@ -20,7 +20,8 @@ if (!fs.existsSync(uploadPath)) {
 }
 
 // Serve static files
-app.use('/images', express.static(uploadPath));
+app.use(express.static('public/images'))
+
 
 // Use environment variable for MongoDB connection
 mongoose.connect(process.env.DB_URL)
