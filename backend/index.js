@@ -5,6 +5,8 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+require('dotenv').config();
+
 
 const UserModel = require("./models/User");
 
@@ -21,9 +23,9 @@ if (!fs.existsSync(uploadPath)) {
 app.use('/images', express.static(uploadPath));
 
 // Use environment variable for MongoDB connection
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.DB_URL)
     .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log("MongoDB connection error:", err));
+    .catch(err => console.error("MongoDB connection error:", err));
 
 // Configure Multer storage
 const storage = multer.diskStorage({

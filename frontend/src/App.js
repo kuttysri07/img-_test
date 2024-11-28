@@ -6,7 +6,7 @@ const App = () => {
     const [file, setFile] = useState(null);
     const [images, setImages] = useState([]);
 
-    const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+    const API_BASE_URL = process.env.REACT_APP_API_URL;
 
     const uploadHandler = () => {
         if (!file) {
